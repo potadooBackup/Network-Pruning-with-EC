@@ -44,7 +44,7 @@ if __name__ == '__main__':
                    verbose=True)
 
     print(f"Best solution found: \nX = {res.X}\nF = {res.F}\nCV= {res.CV}")
-    print(mp.get_fitness_score(verbose=True))
+    print(mp.get_fitness_score(mp.cached_model, verbose=True))
 
     pruned_model_saving_path = f"{mp.config['model_weights_root_path']}pruned/pruned_{model_name}_{dataset}.model"
     torch.save(mp.cached_model, pruned_model_saving_path)
